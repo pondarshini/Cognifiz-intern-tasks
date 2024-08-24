@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Form Validation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateForm(event) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const age = document.getElementById('age').value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const interests = document.querySelectorAll('input[name="interests"]:checked');
+
+            if (!name || !email || !age || isNaN(age)) {
+                event.preventDefault();
+                alert('All fields are required and age must be a number.');
+                return;
+            }
+
+            if (!gender) {
+                event.preventDefault();
+                alert('Please select a gender.');
+                return;
+            }
+
+            if (interests.length === 0) {
+                event.preventDefault();
+                alert('Please select at least one interest.');
+                return;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="/submit" method="POST" onsubmit="validateForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age"><br>
+
+        <fieldset>
+            <legend>Gender:</legend>
+            <div class="flex-group">
+                <label for="male">
+                    <input type="radio" id="male" name="gender" value="male">
+                    Male
+                </label>
+                <label for="female">
+                    <input type="radio" id="female" name="gender" value="female">
+                    Female
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Interests:</legend>
+            <div class="flex-group">
+                <label for="sports">
+                    <input type="checkbox" id="sports" name="interests" value="sports">
+                    Sports
+                </label>
+                <label for="music">
+                    <input type="checkbox" id="music" name="interests" value="music">
+                    Music
+                </label>
+                <label for="reading">
+                    <input type="checkbox" id="reading" name="interests" value="reading">
+                    Reading
+                </label>
+            </div>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

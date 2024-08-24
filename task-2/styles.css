@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 10px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+/* Styles for horizontal layout */
+.flex-group {
+    display: flex;
+    align-items: center;
+}
+
+.flex-group label {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Styles for form submitted page */
+.confirmation-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.confirmation-container h1 {
+    color: #28a745;
+}
+
+.confirmation-container p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.confirmation-container a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.confirmation-container a:hover {
+    background-color: #0056b3;
+}
